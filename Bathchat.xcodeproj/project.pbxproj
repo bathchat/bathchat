@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650C836A18EA1978008F94CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650C836918EA1978008F94CC /* Parse.framework */; };
 		658E804E18E8C6B300DDB0AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E804D18E8C6B300DDB0AB /* Foundation.framework */; };
 		658E805018E8C6B300DDB0AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */; };
 		658E805218E8C6B300DDB0AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E805118E8C6B300DDB0AB /* UIKit.framework */; };
@@ -20,7 +21,6 @@
 		658E807118E8C6B300DDB0AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 658E806F18E8C6B300DDB0AB /* InfoPlist.strings */; };
 		658E807318E8C6B300DDB0AB /* BathchatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E807218E8C6B300DDB0AB /* BathchatTests.m */; };
 		658E807D18E8C6F200DDB0AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658E807C18E8C6F200DDB0AB /* Main.storyboard */; };
-		658E807F18E8CABE00DDB0AB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E807E18E8CABE00DDB0AB /* Parse.framework */; };
 		658E808918E8CB6C00DDB0AB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E808018E8CB6C00DDB0AB /* AudioToolbox.framework */; };
 		658E808A18E8CB6C00DDB0AB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E808118E8CB6C00DDB0AB /* CFNetwork.framework */; };
 		658E808B18E8CB6C00DDB0AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E808218E8CB6C00DDB0AB /* CoreLocation.framework */; };
@@ -50,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		650C836918EA1978008F94CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		658E804A18E8C6B300DDB0AB /* Bathchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bathchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658E804D18E8C6B300DDB0AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,7 +68,6 @@
 		658E807018E8C6B300DDB0AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		658E807218E8C6B300DDB0AB /* BathchatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BathchatTests.m; sourceTree = "<group>"; };
 		658E807C18E8C6F200DDB0AB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		658E807E18E8CABE00DDB0AB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		658E808018E8CB6C00DDB0AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		658E808118E8CB6C00DDB0AB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		658E808218E8CB6C00DDB0AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -107,8 +107,8 @@
 				658E809018E8CB6C00DDB0AB /* StoreKit.framework in Frameworks */,
 				658E809118E8CB6C00DDB0AB /* SystemConfiguration.framework in Frameworks */,
 				658E805018E8C6B300DDB0AB /* CoreGraphics.framework in Frameworks */,
+				650C836A18EA1978008F94CC /* Parse.framework in Frameworks */,
 				658E805218E8C6B300DDB0AB /* UIKit.framework in Frameworks */,
-				658E807F18E8CABE00DDB0AB /* Parse.framework in Frameworks */,
 				658E804E18E8C6B300DDB0AB /* Foundation.framework in Frameworks */,
 				658E829E18E8F1D700DDB0AB /* FacebookSDK.framework in Frameworks */,
 			);
@@ -157,7 +157,7 @@
 				658E804D18E8C6B300DDB0AB /* Foundation.framework */,
 				658E808318E8CB6C00DDB0AB /* libz.dylib */,
 				658E808418E8CB6C00DDB0AB /* MobileCoreServices.framework */,
-				658E807E18E8CABE00DDB0AB /* Parse.framework */,
+				650C836918EA1978008F94CC /* Parse.framework */,
 				658E808518E8CB6C00DDB0AB /* QuartzCore.framework */,
 				658E808618E8CB6C00DDB0AB /* Security.framework */,
 				658E808718E8CB6C00DDB0AB /* StoreKit.framework */,
@@ -306,7 +306,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BC;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Bathchat LLC";
 				TargetAttributes = {
 					658E806418E8C6B300DDB0AB = {
@@ -412,7 +412,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -451,7 +450,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -488,6 +486,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Derek/Documents/Bathchat,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bathchat/Bathchat-Prefix.pch";
@@ -505,6 +504,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Derek/Documents/Bathchat,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bathchat/Bathchat-Prefix.pch";
@@ -517,7 +517,6 @@
 		658E807A18E8C6B300DDB0AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bathchat.app/Bathchat";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -540,7 +539,6 @@
 		658E807B18E8C6B300DDB0AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bathchat.app/Bathchat";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
