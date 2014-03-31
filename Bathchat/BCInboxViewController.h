@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BCInboxViewController : UITableViewController
+@interface BCInboxViewController : UITableViewController <UIImagePickerControllerDelegate>
+
+- (IBAction)takePhoto:(id)sender;
 
 @end

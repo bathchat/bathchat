@@ -18,6 +18,11 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.4375 green:0.6328 blue:0.8594 alpha:1.0]];
         
     return YES;
 }

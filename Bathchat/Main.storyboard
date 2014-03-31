@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" title="Bathchat" id="oeQ-7Z-1lb">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="HDZ-gz-pvL">
                             <connections>
-                                <segue destination="fMq-T8-BmL" kind="push" id="UG4-mI-dU5"/>
+                                <action selector="takePhoto:" destination="GQp-IP-Qpx" id="4Bg-qI-OJe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
