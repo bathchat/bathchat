@@ -36,6 +36,7 @@
 		658E829918E8EBCC00DDB0AB /* BCBath.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829818E8EBCC00DDB0AB /* BCBath.m */; };
 		658E829C18E8EDE100DDB0AB /* BCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829B18E8EDE100DDB0AB /* BCMessage.m */; };
 		658E829E18E8F1D700DDB0AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */; };
+		658E82A418EA00EC00DDB0AB /* BCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E82A318EA00EC00DDB0AB /* BCCameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		658E829A18E8EDE100DDB0AB /* BCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMessage.h; sourceTree = "<group>"; };
 		658E829B18E8EDE100DDB0AB /* BCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessage.m; sourceTree = "<group>"; };
 		658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		658E82A218EA00EC00DDB0AB /* BCCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCCameraViewController.h; sourceTree = "<group>"; };
+		658E82A318EA00EC00DDB0AB /* BCCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCCameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,10 +233,12 @@
 		658E809718E8CCB600DDB0AB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				658E829118E8EB7400DDB0AB /* BCInboxViewController.h */,
-				658E829218E8EB7400DDB0AB /* BCInboxViewController.m */,
 				658E809218E8CC9E00DDB0AB /* BCLoginViewController.h */,
 				658E809318E8CC9E00DDB0AB /* BCLoginViewController.m */,
+				658E829118E8EB7400DDB0AB /* BCInboxViewController.h */,
+				658E829218E8EB7400DDB0AB /* BCInboxViewController.m */,
+				658E82A218EA00EC00DDB0AB /* BCCameraViewController.h */,
+				658E82A318EA00EC00DDB0AB /* BCCameraViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658E82A418EA00EC00DDB0AB /* BCCameraViewController.m in Sources */,
 				658E805A18E8C6B300DDB0AB /* main.m in Sources */,
 				658E805E18E8C6B300DDB0AB /* BCAppDelegate.m in Sources */,
 				658E829318E8EB7400DDB0AB /* BCInboxViewController.m in Sources */,
@@ -569,6 +575,7 @@
 				658E807818E8C6B300DDB0AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		658E807918E8C6B300DDB0AB /* Build configuration list for PBXNativeTarget "BathchatTests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +584,7 @@
 				658E807B18E8C6B300DDB0AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

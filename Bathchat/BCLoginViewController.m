@@ -7,6 +7,7 @@
 //
 
 #import "BCLoginViewController.h"
+#import "BCInboxViewController.h"
 
 @interface BCLoginViewController ()
 
@@ -26,8 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.navigationController.navigationBar.hidden = YES;
+    
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    }
 }
 
 - (IBAction)loginButtonTouchHandler:(id)sender  {
@@ -47,10 +51,10 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-//            [self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
+            [self performSegueWithIdentifier:@"loginSegue" sender:self];
         } else {
             NSLog(@"User with facebook logged in!");
-//            [self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
+            [self performSegueWithIdentifier:@"loginSegue" sender:self];
         }
     }];
 }
