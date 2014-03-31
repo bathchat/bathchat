@@ -31,11 +31,11 @@
 		658E809018E8CB6C00DDB0AB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E808718E8CB6C00DDB0AB /* StoreKit.framework */; };
 		658E809118E8CB6C00DDB0AB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E808818E8CB6C00DDB0AB /* SystemConfiguration.framework */; };
 		658E809418E8CC9E00DDB0AB /* BCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E809318E8CC9E00DDB0AB /* BCLoginViewController.m */; };
-		658E829018E8CEDF00DDB0AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E828F18E8CEDF00DDB0AB /* FacebookSDK.framework */; };
 		658E829318E8EB7400DDB0AB /* BCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829218E8EB7400DDB0AB /* BCInboxViewController.m */; };
 		658E829618E8EBA300DDB0AB /* BCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829518E8EBA300DDB0AB /* BCUser.m */; };
 		658E829918E8EBCC00DDB0AB /* BCBath.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829818E8EBCC00DDB0AB /* BCBath.m */; };
 		658E829C18E8EDE100DDB0AB /* BCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829B18E8EDE100DDB0AB /* BCMessage.m */; };
+		658E829E18E8F1D700DDB0AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,6 @@
 		658E808818E8CB6C00DDB0AB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		658E809218E8CC9E00DDB0AB /* BCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCLoginViewController.h; sourceTree = "<group>"; };
 		658E809318E8CC9E00DDB0AB /* BCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCLoginViewController.m; sourceTree = "<group>"; };
-		658E828F18E8CEDF00DDB0AB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		658E829118E8EB7400DDB0AB /* BCInboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCInboxViewController.h; sourceTree = "<group>"; };
 		658E829218E8EB7400DDB0AB /* BCInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCInboxViewController.m; sourceTree = "<group>"; };
 		658E829418E8EBA300DDB0AB /* BCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCUser.h; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		658E829818E8EBCC00DDB0AB /* BCBath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBath.m; sourceTree = "<group>"; };
 		658E829A18E8EDE100DDB0AB /* BCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMessage.h; sourceTree = "<group>"; };
 		658E829B18E8EDE100DDB0AB /* BCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessage.m; sourceTree = "<group>"; };
+		658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 				658E805218E8C6B300DDB0AB /* UIKit.framework in Frameworks */,
 				658E807F18E8CABE00DDB0AB /* Parse.framework in Frameworks */,
 				658E804E18E8C6B300DDB0AB /* Foundation.framework in Frameworks */,
-				658E829018E8CEDF00DDB0AB /* FacebookSDK.framework in Frameworks */,
+				658E829E18E8F1D700DDB0AB /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,11 +146,11 @@
 		658E804C18E8C6B300DDB0AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */,
 				658E808018E8CB6C00DDB0AB /* AudioToolbox.framework */,
 				658E808118E8CB6C00DDB0AB /* CFNetwork.framework */,
 				658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */,
 				658E808218E8CB6C00DDB0AB /* CoreLocation.framework */,
-				658E828F18E8CEDF00DDB0AB /* FacebookSDK.framework */,
 				658E804D18E8C6B300DDB0AB /* Foundation.framework */,
 				658E808318E8CB6C00DDB0AB /* libz.dylib */,
 				658E808418E8CB6C00DDB0AB /* MobileCoreServices.framework */,
@@ -482,7 +482,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Derek/Documents/Bathchat,
-					/Users/Derek/Documents/Bathchat/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bathchat/Bathchat-Prefix.pch";
@@ -500,7 +499,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Derek/Documents/Bathchat,
-					/Users/Derek/Documents/Bathchat/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bathchat/Bathchat-Prefix.pch";
