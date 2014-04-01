@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="r1s-os-9Ii">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="r1s-os-9Ii">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -54,6 +54,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="fMq-T8-BmL" kind="push" identifier="photoTakenSegue" id="DhR-Um-otU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xos-FX-pg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="-2076" y="-381"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Edit Photo View Controller - Edit-->
         <scene sceneID="5i8-UZ-bzV">
             <objects>
-                <viewController id="fMq-T8-BmL" customClass="BCCameraViewController" sceneMemberID="viewController">
+                <viewController id="fMq-T8-BmL" customClass="BCEditPhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G1V-ED-MKb"/>
                         <viewControllerLayoutGuide type="bottom" id="30P-8S-YMh"/>
@@ -113,9 +116,24 @@
                     <view key="view" contentMode="scaleToFill" id="aoH-6i-XLv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-o3-cOd">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nYi-C6-LR1"/>
+                    <navigationItem key="navigationItem" title="Edit" id="nYi-C6-LR1">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="QYd-3K-aZq">
+                            <connections>
+                                <action selector="sendPhoto:" destination="fMq-T8-BmL" id="rd0-lL-Ghi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoView" destination="d2P-o3-cOd" id="lsd-Li-rH8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTa-jh-nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

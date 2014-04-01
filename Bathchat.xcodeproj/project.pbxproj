@@ -36,6 +36,7 @@
 		658E829918E8EBCC00DDB0AB /* BCBath.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829818E8EBCC00DDB0AB /* BCBath.m */; };
 		658E829C18E8EDE100DDB0AB /* BCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829B18E8EDE100DDB0AB /* BCMessage.m */; };
 		658E829E18E8F1D700DDB0AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */; };
+		65CBFD4918EA5BB90083AAAF /* BCEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CBFD4818EA5BB90083AAAF /* BCEditPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		658E829A18E8EDE100DDB0AB /* BCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMessage.h; sourceTree = "<group>"; };
 		658E829B18E8EDE100DDB0AB /* BCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessage.m; sourceTree = "<group>"; };
 		658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		65CBFD4718EA5BB90083AAAF /* BCEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCEditPhotoViewController.h; sourceTree = "<group>"; };
+		65CBFD4818EA5BB90083AAAF /* BCEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCEditPhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 				658E809318E8CC9E00DDB0AB /* BCLoginViewController.m */,
 				658E829118E8EB7400DDB0AB /* BCInboxViewController.h */,
 				658E829218E8EB7400DDB0AB /* BCInboxViewController.m */,
+				65CBFD4718EA5BB90083AAAF /* BCEditPhotoViewController.h */,
+				65CBFD4818EA5BB90083AAAF /* BCEditPhotoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			files = (
 				658E805A18E8C6B300DDB0AB /* main.m in Sources */,
 				658E805E18E8C6B300DDB0AB /* BCAppDelegate.m in Sources */,
+				65CBFD4918EA5BB90083AAAF /* BCEditPhotoViewController.m in Sources */,
 				658E829318E8EB7400DDB0AB /* BCInboxViewController.m in Sources */,
 				658E809418E8CC9E00DDB0AB /* BCLoginViewController.m in Sources */,
 				658E829C18E8EDE100DDB0AB /* BCMessage.m in Sources */,

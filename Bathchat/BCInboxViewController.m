@@ -7,8 +7,11 @@
 //
 
 #import "BCInboxViewController.h"
+#import "BCEditPhotoViewController.h"
 
 @interface BCInboxViewController ()
+
+@property (nonatomic) UIImage* currentPhoto;
 
 @end
 
@@ -40,6 +43,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"photoTakenSegue"]){
+        BCEditPhotoViewController *controller = (BCEditPhotoViewController*)segue.destinationViewController;
+        controller.photo = _currentPhoto;
+    }
+}
+
 - (IBAction)takePhoto:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
 #if TARGET_IPHONE_SIMULATOR
@@ -47,7 +57,7 @@
 #else
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
 #endif
-    imagePickerController.editing = YES;
+    imagePickerController.editing = NO;
     imagePickerController.delegate = (id)self;
     
     [self presentModalViewController:imagePickerController animated:YES];
@@ -62,7 +72,9 @@
     //    UIImage *croppedImage = [scaledImage croppedImage:CGRectMake((scaledImage.size.width -photo.frame.size.width)/2, (scaledImage.size.height -photo.frame.size.height)/2, photo.frame.size.width, photo.frame.size.height)];
     //    // Show the photo on the screen
     //    photo.image = croppedImage;
+    _currentPhoto = image;
     [picker dismissModalViewControllerAnimated:NO];
+    [self performSegueWithIdentifier:@"photoTakenSegue" sender:self];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
