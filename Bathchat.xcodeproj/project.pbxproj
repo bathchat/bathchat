@@ -10,6 +10,11 @@
 		650C836A18EA1978008F94CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650C836918EA1978008F94CC /* Parse.framework */; };
 		65299BFE18ED317200ECB5F3 /* BCInboxViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65299BFD18ED317200ECB5F3 /* BCInboxViewCell.m */; };
 		65299C0518ED3F4000ECB5F3 /* duckybg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C0418ED3F4000ECB5F3 /* duckybg@2x.png */; };
+		65299C0B18ED8E0F00ECB5F3 /* BCEditImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65299C0A18ED8E0F00ECB5F3 /* BCEditImageView.m */; };
+		65299C0D18ED923800ECB5F3 /* ducky@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C0C18ED923800ECB5F3 /* ducky@2x.png */; };
+		65299C1718EE153D00ECB5F3 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C1418EE153D00ECB5F3 /* gear@2x.png */; };
+		65299C1818EE153D00ECB5F3 /* bath@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C1518EE153D00ECB5F3 /* bath@2x.png */; };
+		65299C1918EE153D00ECB5F3 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C1618EE153D00ECB5F3 /* inbox@2x.png */; };
 		658E804E18E8C6B300DDB0AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E804D18E8C6B300DDB0AB /* Foundation.framework */; };
 		658E805018E8C6B300DDB0AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */; };
 		658E805218E8C6B300DDB0AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E805118E8C6B300DDB0AB /* UIKit.framework */; };
@@ -58,6 +63,12 @@
 		65299BFD18ED317200ECB5F3 /* BCInboxViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCInboxViewCell.m; sourceTree = "<group>"; };
 		65299C0018ED39E200ECB5F3 /* defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		65299C0418ED3F4000ECB5F3 /* duckybg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "duckybg@2x.png"; sourceTree = "<group>"; };
+		65299C0918ED8E0F00ECB5F3 /* BCEditImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCEditImageView.h; sourceTree = "<group>"; };
+		65299C0A18ED8E0F00ECB5F3 /* BCEditImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCEditImageView.m; sourceTree = "<group>"; };
+		65299C0C18ED923800ECB5F3 /* ducky@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ducky@2x.png"; sourceTree = "<group>"; };
+		65299C1418EE153D00ECB5F3 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		65299C1518EE153D00ECB5F3 /* bath@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bath@2x.png"; sourceTree = "<group>"; };
+		65299C1618EE153D00ECB5F3 /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		658E804A18E8C6B300DDB0AB /* Bathchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bathchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658E804D18E8C6B300DDB0AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,6 +150,8 @@
 		65299BFF18ED317700ECB5F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				65299C0918ED8E0F00ECB5F3 /* BCEditImageView.h */,
+				65299C0A18ED8E0F00ECB5F3 /* BCEditImageView.m */,
 				65299BFC18ED317200ECB5F3 /* BCInboxViewCell.h */,
 				65299BFD18ED317200ECB5F3 /* BCInboxViewCell.m */,
 			);
@@ -148,6 +161,10 @@
 		65299C0118ED3E5D00ECB5F3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				65299C1418EE153D00ECB5F3 /* gear@2x.png */,
+				65299C1518EE153D00ECB5F3 /* bath@2x.png */,
+				65299C1618EE153D00ECB5F3 /* inbox@2x.png */,
+				65299C0C18ED923800ECB5F3 /* ducky@2x.png */,
 				65299C0418ED3F4000ECB5F3 /* duckybg@2x.png */,
 			);
 			name = images;
@@ -369,9 +386,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65299C0D18ED923800ECB5F3 /* ducky@2x.png in Resources */,
+				65299C1918EE153D00ECB5F3 /* inbox@2x.png in Resources */,
+				65299C1718EE153D00ECB5F3 /* gear@2x.png in Resources */,
 				65299C0518ED3F4000ECB5F3 /* duckybg@2x.png in Resources */,
 				658E807D18E8C6F200DDB0AB /* Main.storyboard in Resources */,
 				658E805818E8C6B300DDB0AB /* InfoPlist.strings in Resources */,
+				65299C1818EE153D00ECB5F3 /* bath@2x.png in Resources */,
 				658E806018E8C6B300DDB0AB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +417,7 @@
 				658E805E18E8C6B300DDB0AB /* BCAppDelegate.m in Sources */,
 				65CBFD4918EA5BB90083AAAF /* BCEditPhotoViewController.m in Sources */,
 				658E829318E8EB7400DDB0AB /* BCInboxViewController.m in Sources */,
+				65299C0B18ED8E0F00ECB5F3 /* BCEditImageView.m in Sources */,
 				658E809418E8CC9E00DDB0AB /* BCLoginViewController.m in Sources */,
 				658E829C18E8EDE100DDB0AB /* BCMessage.m in Sources */,
 				658E829618E8EBA300DDB0AB /* BCUser.m in Sources */,

@@ -159,6 +159,8 @@
     PFObject* message = [_messages objectAtIndex:indexPath.row];
     PFObject* sender = message[@"sender"];
     
+    cell.message = message;
+    
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", sender[@"first_name"], sender[@"last_name"]];
     cell.picture.image = [UIImage imageWithData:
                           [NSData dataWithContentsOfURL:
@@ -177,6 +179,10 @@
     NSData *imageData = [file getData];
     UIImage *imageFromData = [UIImage imageWithData:imageData];
     cell.messagePhoto = imageFromData;
+    
+    if (message[@"read"]) {
+        [cell markAsRead];
+    }
                           
     return cell;
 }

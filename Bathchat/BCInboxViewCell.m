@@ -26,6 +26,12 @@
                                                action:@selector(handleLongPress:)];
     longPress.minimumPressDuration = 0.25;
     [self addGestureRecognizer:longPress];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+}
+
+- (void)markAsRead {
+    [self.picture.layer setBorderWidth:0];
+    [self.nameLabel setTextColor:[UIColor lightGrayColor]];
 }
 
 -  (void)handleLongPress:(UILongPressGestureRecognizer*)sender {
@@ -33,31 +39,24 @@
         NSLog(@"UIGestureRecognizerStateEnded");
         [_messageView removeFromSuperview];
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+        [self markAsRead];
+        _message[@"read"] = [NSNumber numberWithBool:YES];
+        [_message saveInBackground];
     }
-    else if (sender.state == UIGestureRecognizerStateBegan){
-        NSLog(@"UIGestureRecognizerStateBegan.");
-        _messageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                     0,
-                                                                     [[UIScreen mainScreen] bounds].size.width,
-                                                                     [[UIScreen mainScreen] bounds].size.height)];
-        _messageView.image = _messagePhoto;
-        [_messageView setBackgroundColor:[UIColor blackColor]];
-        _messageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.window addSubview:_messageView];
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    else if (sender.state == UIGestureRecognizerStateBegan) {
+        if (!_message[@"read"]) {
+            NSLog(@"UIGestureRecognizerStateBegan.");
+            _messageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+                                                                         0,
+                                                                         [[UIScreen mainScreen] bounds].size.width,
+                                                                         [[UIScreen mainScreen] bounds].size.height)];
+            _messageView.image = _messagePhoto;
+            [_messageView setBackgroundColor:[UIColor blackColor]];
+            _messageView.contentMode = UIViewContentModeScaleAspectFill;
+            [self.window addSubview:_messageView];
+            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+        }
     }
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touching touching");
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"finished touching");
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"cancelled touching");
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

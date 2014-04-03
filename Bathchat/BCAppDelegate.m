@@ -23,6 +23,7 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil]];
     [[UINavigationBar appearance] setBarTintColor:BC_BLUE];
+    [[UITabBar appearance] setSelectedImageTintColor:BC_BLUE];
         
     return YES;
 }

@@ -21,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Derek Schultz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogc-GS-la8">
-                                            <rect key="frame" x="76" y="20" width="107" height="21"/>
+                                            <rect key="frame" x="76" y="20" width="179" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -126,7 +126,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-o3-cOd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-o3-cOd" customClass="BCEditImageView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -314,7 +314,7 @@
         <scene sceneID="ErH-DC-Wi7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xbP-lm-VfC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Inbox" id="oTS-61-bQJ"/>
+                    <tabBarItem key="tabBarItem" title="Inbox" image="inbox.png" id="oTS-61-bQJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nIu-4h-qgE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -333,7 +333,7 @@
         <scene sceneID="eAW-3n-dA2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L1k-EP-uDD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Baths" id="VI5-oH-LXI"/>
+                    <tabBarItem key="tabBarItem" title="Baths" image="bath.png" id="VI5-oH-LXI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q9E-tK-mbg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -352,7 +352,7 @@
         <scene sceneID="rRR-E1-Sr5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fjh-Vz-D8k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="KOO-TV-wrv"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear.png" id="KOO-TV-wrv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LMc-1n-lLh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -368,6 +368,11 @@
             <point key="canvasLocation" x="-908" y="323"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bath.png" width="33" height="14"/>
+        <image name="gear.png" width="25" height="26"/>
+        <image name="inbox.png" width="27" height="18"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

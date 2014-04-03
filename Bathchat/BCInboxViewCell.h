@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface BCInboxViewCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *picture;
+@property (nonatomic, strong) PFObject *message;
 @property (nonatomic, strong) UIImage *messagePhoto;
 @property (nonatomic, strong) UIImageView *messageView;
+
+- (void)markAsRead;
 
 @end
