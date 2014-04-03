@@ -7,7 +7,6 @@
 //
 
 #import "BCInboxViewController.h"
-#import "BCEditPhotoViewController.h"
 
 @interface BCInboxViewController ()
 
@@ -29,6 +28,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    UIImage *patternImage = [UIImage imageNamed:@"duckybg"];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+//    refreshControl.tintColor = [UIColor whiteColor];
+    [refreshControl setBackgroundColor:[UIColor whiteColor]];
+    self.refreshControl = refreshControl;
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,21 +60,29 @@
     }
 }
 
+- (IBAction)unwindToInbox:(UIStoryboardSegue *)unwindSegue
+{
+}
+
 - (IBAction)takePhoto:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
 #if TARGET_IPHONE_SIMULATOR
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 #else
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-#endif
     imagePickerController.editing = NO;
-    imagePickerController.delegate = (id)self;
+    imagePickerController.showsCameraControls = YES;
+#endif
     
+    imagePickerController.delegate = (id)self;
     [self presentModalViewController:imagePickerController animated:YES];
 }
 
 #pragma mark - Image picker delegate methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissModalViewControllerAnimated:NO];
+
+    NSLog(@"photo chosen");
 	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     // Resize the image from the camera
     //	UIImage *scaledImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFill bounds:CGSizeMake(photo.frame.size.width, photo.frame.size.height) interpolationQuality:kCGInterpolationHigh];
@@ -73,7 +91,6 @@
     //    // Show the photo on the screen
     //    photo.image = croppedImage;
     _currentPhoto = image;
-    [picker dismissModalViewControllerAnimated:NO];
     [self performSegueWithIdentifier:@"photoTakenSegue" sender:self];
 }
 
@@ -87,22 +104,27 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"InboxCell";
+    BCInboxViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.nameLabel.text = @"Derek Schultz";
+    cell.picture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://graph.facebook.com/mynameisderekschultz/picture?width=84&height=84"]]];
+    cell.picture.layer.masksToBounds = YES;
+    cell.picture.layer.cornerRadius = 21;
+    [cell.picture.layer setBorderWidth:1.5];
+    [cell.picture.layer setBorderColor:[BC_BLUE CGColor]];
     
     return cell;
 }

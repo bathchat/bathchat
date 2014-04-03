@@ -7,6 +7,7 @@
 //
 
 #import "BCEditPhotoViewController.h"
+#import "BCSendPhotoViewController.h"
 
 @interface BCEditPhotoViewController ()
 
@@ -26,9 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"here");
-    NSLog(@"%@", _photo);
     _photoView.image = _photo;
+}
+
+- (IBAction)editComplete:(id)sender {
+    [self performSegueWithIdentifier:@"editCompleteSegue" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +41,13 @@
 }
 
 - (IBAction)sendPhoto:(id)sender {
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"editCompleteSegue"]){
+        BCSendPhotoViewController *controller = (BCSendPhotoViewController*)segue.destinationViewController;
+        controller.photo = _photo;
+    }
 }
 
 /*

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "defines.h"
 
 @interface BCAppDelegate : UIResponder <UIApplicationDelegate>
 
