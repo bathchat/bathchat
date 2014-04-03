@@ -63,7 +63,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="fMq-T8-BmL" kind="push" identifier="photoTakenSegue" id="DhR-Um-otU"/>
+                        <segue destination="fMq-T8-BmL" kind="push" identifier="PhotoTakenSegue" id="DhR-Um-otU"/>
+                        <segue destination="FNq-XN-5x8" kind="push" id="ILa-o3-74F"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xos-FX-pg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,7 +107,7 @@
                     <navigationItem key="navigationItem" id="Pwf-ML-NbO"/>
                     <connections>
                         <outlet property="activityIndicator" destination="27d-PO-rX9" id="xY3-Tt-IEW"/>
-                        <segue destination="jn5-WH-hfQ" kind="push" identifier="loginSegue" id="IS2-b7-ady"/>
+                        <segue destination="jn5-WH-hfQ" kind="push" identifier="LoginSegue" id="IS2-b7-ady"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiL-YP-saW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,12 +126,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-o3-cOd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-o3-cOd">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d2P-o3-cOd" firstAttribute="leading" secondItem="aoH-6i-XLv" secondAttribute="leading" id="Afn-1k-cFf"/>
+                            <constraint firstItem="d2P-o3-cOd" firstAttribute="top" secondItem="G1V-ED-MKb" secondAttribute="bottom" id="HBQ-tU-grT"/>
+                            <constraint firstAttribute="trailing" secondItem="d2P-o3-cOd" secondAttribute="trailing" id="OD2-T2-5HZ"/>
+                            <constraint firstItem="30P-8S-YMh" firstAttribute="top" secondItem="d2P-o3-cOd" secondAttribute="bottom" id="c1o-Hk-ZnM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit" id="nYi-C6-LR1">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="e4h-Be-jii">
@@ -146,7 +153,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTa-jh-nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="-1085"/>
+            <point key="canvasLocation" x="278" y="-1449"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jYK-0M-qMF">
+            <objects>
+                <viewController id="FNq-XN-5x8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3z2-1d-Ped"/>
+                        <viewControllerLayoutGuide type="bottom" id="7rs-Ap-jrV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ni7-d9-Xwj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9TZ-1y-NFH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1u-h0-8Qs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="-760"/>
         </scene>
         <!--Send Photo View Controller - Recipients-->
         <scene sceneID="nbN-nj-Ap2">
@@ -183,7 +209,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjo-a6-bsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XGj-uV-YXx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="624" y="-1085"/>
+            <point key="canvasLocation" x="796" y="-1449"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fJP-W2-VMD">

@@ -13,5 +13,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *picture;
+@property (nonatomic, strong) UIImage *messagePhoto;
+@property (nonatomic, strong) UIImageView *messageView;
 
 @end

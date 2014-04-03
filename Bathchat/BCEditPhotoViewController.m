@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _photoView.contentMode = UIViewContentModeScaleAspectFit;
     _photoView.image = _photo;
 }
 

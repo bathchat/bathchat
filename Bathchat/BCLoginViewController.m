@@ -28,9 +28,11 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
-    
+    PFUser* cu = [PFUser currentUser];
+    NSLog(@"%@", cu[@"authData"]);
+    NSLog(@"%@", cu[@"objectId"]);
     if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+        [self performSegueWithIdentifier:@"LoginSegue" sender:self];
     }
 }
 
@@ -51,10 +53,28 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            [self performSegueWithIdentifier:@"loginSegue" sender:self];
+            [FBRequestConnection
+             startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     user[@"facebookId"] = [result objectForKey:@"id"];
+                     user[@"first_name"] = [result objectForKey:@"first_name"];
+                     user[@"last_name"] = [result objectForKey:@"last_name"];
+                     [user saveInBackground];
+                 }
+             }];
+            [self performSegueWithIdentifier:@"LoginSegue" sender:self];
         } else {
             NSLog(@"User with facebook logged in!");
-            [self performSegueWithIdentifier:@"loginSegue" sender:self];
+            [FBRequestConnection
+             startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     user[@"facebookId"] = [result objectForKey:@"id"];
+                     user[@"first_name"] = [result objectForKey:@"first_name"];
+                     user[@"last_name"] = [result objectForKey:@"last_name"];
+                     [user saveInBackground];
+                 }
+             }];
+            [self performSegueWithIdentifier:@"LoginSegue" sender:self];
         }
     }];
 }

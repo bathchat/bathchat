@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 #import "defines.h"
 #import "BCEditPhotoViewController.h"

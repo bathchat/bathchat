@@ -17,6 +17,7 @@
 @property (readwrite, nonatomic, copy) NSString *fbidSelection;
 @property (readwrite, nonatomic, retain) FBFrictionlessRecipientCache *friendCache;
 @property (nonatomic, strong) PFFile* uploadedFile;
+@property (nonatomic, strong) NSArray* selectedRecipients;
 
 - (void)updateActivityForID:(NSString *)fbid;
 
@@ -85,7 +86,26 @@
     PFObject *message = [PFObject objectWithClassName:@"Message"];
     message[@"sender"] = [PFUser currentUser];
     message[@"photo"] = _uploadedFile;
-    [message saveInBackground];
+    
+    NSMutableArray* recipientList = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [_selectedRecipients count]; i++) {
+        NSDictionary<FBGraphUser>* graphUser = [_selectedRecipients objectAtIndex:i];
+        [recipientList addObject:graphUser.id];
+    }
+    
+    PFQuery* findRecipients = [PFQuery queryWithClassName:@"_User"];
+    [findRecipients whereKey:@"facebookId" containedIn:recipientList];
+    [findRecipients findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"adding recipients");
+            message[@"recipients"] = objects;
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        [message saveInBackground];
+    }];
     [self performSegueWithIdentifier:@"UnwindToInboxSegue" sender:self];
 }
 
@@ -139,8 +159,8 @@
 // application.
 
 - (void)friendPickerViewControllerSelectionDidChange:(FBFriendPickerViewController *)friendPicker {
-    NSLog(@"changed...");
 //    self.activityTextView.text = @"";
+    _selectedRecipients = friendPicker.selection;
     if (friendPicker.selection.count) {
         [self updateActivityForID:[[friendPicker.selection objectAtIndex:0] id]];
     } else {
@@ -150,7 +170,6 @@
 
 - (BOOL)friendPickerViewController:(FBFriendPickerViewController *)friendPicker
                  shouldIncludeUser:(id<FBGraphUser>)user {
-    NSLog(@"deciding...");
     return [[user objectForKey:@"installed"] boolValue];
 }
 

@@ -11,6 +11,7 @@
 @interface BCInboxViewController ()
 
 @property (nonatomic) UIImage* currentPhoto;
+@property (nonatomic, strong) NSArray* messages;
 
 @end
 
@@ -20,7 +21,14 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+    }
+    return self;
+}
+
+- (id) initWithCoder:(NSCoder *) coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
     }
     return self;
 }
@@ -31,20 +39,46 @@
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    
     UIImage *patternImage = [UIImage imageNamed:@"duckybg"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 //    refreshControl.tintColor = [UIColor whiteColor];
     [refreshControl setBackgroundColor:[UIColor whiteColor]];
+    [refreshControl addTarget:self action:@selector(refreshInbox) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
-
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self refreshInbox];
+}
+
+- (void)refreshInbox {
+    PFUser* currentUser = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    [query includeKey:@"sender"];
+    [query whereKey:@"recipients" containsAllObjectsInArray:@[currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d messages.", objects.count);
+            // Do something with the found objects
+            _messages = objects;
+            [[self tableView] reloadData];
+            [self.refreshControl endRefreshing];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +88,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"photoTakenSegue"]){
+    if([segue.identifier isEqualToString:@"PhotoTakenSegue"]){
         BCEditPhotoViewController *controller = (BCEditPhotoViewController*)segue.destinationViewController;
         controller.photo = _currentPhoto;
     }
@@ -81,6 +115,9 @@
 #pragma mark - Image picker delegate methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissModalViewControllerAnimated:NO];
+    
+    // Fix the status bar color if the picker messed it up :-/
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     NSLog(@"photo chosen");
 	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
@@ -91,7 +128,8 @@
     //    // Show the photo on the screen
     //    photo.image = croppedImage;
     _currentPhoto = image;
-    [self performSegueWithIdentifier:@"photoTakenSegue" sender:self];
+    
+    [self performSegueWithIdentifier:@"PhotoTakenSegue" sender:self];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -102,16 +140,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    NSLog(@"doing well");
+    return [_messages count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,13 +156,28 @@
     static NSString *CellIdentifier = @"InboxCell";
     BCInboxViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.nameLabel.text = @"Derek Schultz";
-    cell.picture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://graph.facebook.com/mynameisderekschultz/picture?width=84&height=84"]]];
+    PFObject* message = [_messages objectAtIndex:indexPath.row];
+    PFObject* sender = message[@"sender"];
+    
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", sender[@"first_name"], sender[@"last_name"]];
+    cell.picture.image = [UIImage imageWithData:
+                          [NSData dataWithContentsOfURL:
+                           [NSURL URLWithString:
+                            [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?width=84&height=84", sender[@"facebookId"]]]]];
     cell.picture.layer.masksToBounds = YES;
     cell.picture.layer.cornerRadius = 21;
     [cell.picture.layer setBorderWidth:1.5];
     [cell.picture.layer setBorderColor:[BC_BLUE CGColor]];
     
+    cell.messagePhoto = message[@""];
+    
+    cell.timeLabel.text = @""; // TODO... I don't feel like making this right now
+    
+    PFFile* file = message[@"photo"];
+    NSData *imageData = [file getData];
+    UIImage *imageFromData = [UIImage imageWithData:imageData];
+    cell.messagePhoto = imageFromData;
+                          
     return cell;
 }
 
