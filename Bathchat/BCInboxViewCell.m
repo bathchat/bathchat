@@ -52,7 +52,7 @@
                                                                          [[UIScreen mainScreen] bounds].size.height)];
             _messageView.image = _messagePhoto;
             [_messageView setBackgroundColor:[UIColor blackColor]];
-            _messageView.contentMode = UIViewContentModeScaleAspectFill;
+//            _messageView.contentMode = UIViewContentModeScaleAspectFill;
             [self.window addSubview:_messageView];
             [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
         }

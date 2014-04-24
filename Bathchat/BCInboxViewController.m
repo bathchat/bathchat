@@ -36,6 +36,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation addUniqueObject:@"TestChannel" forKey:@"channels"];
+    [currentInstallation saveInBackground];
+
+    
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.tableFooterView = [[UIView alloc] init];
     

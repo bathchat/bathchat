@@ -24,8 +24,53 @@
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil]];
     [[UINavigationBar appearance] setBarTintColor:BC_BLUE];
     [[UITabBar appearance] setSelectedImageTintColor:BC_BLUE];
-        
+    
+    [application registerForRemoteNotificationTypes:
+                 UIRemoteNotificationTypeBadge |
+                 UIRemoteNotificationTypeAlert |
+                 UIRemoteNotificationTypeSound];
+    
+    
+    if(![CLLocationManager locationServicesEnabled])
+    {
+        NSLog(@"You need to enable Location Services");
+    }
+    if(![CLLocationManager isMonitoringAvailableForClass:[CLRegion class]])
+    {
+        NSLog(@"Region monitoring is not available for this Class");
+    }
+    if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied ||
+       [CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted )
+    {
+        NSLog(@"You need to authorize Location Services for the APP");
+    }
+    
+    _locationMgr = [[CLLocationManager alloc] init];
+    _locationMgr.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationMgr.delegate = self;
+    
+    [_locationMgr startUpdatingLocation];
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    NSLog(@"DID REGISTER FOR APNS");
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"FAILED TO REGISTER FOR APNS");
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"DID RECEIVE PUSH NOTIFICATION");
+    [PFPush handlePush:userInfo];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -63,6 +108,21 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark -
+#pragma mark CLLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+	NSLog(@"location updated %@", newLocation);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+	NSLog(@"location errored");
 }
 
 @end

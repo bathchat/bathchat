@@ -30,7 +30,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.fieldsForRequest = [NSSet setWithObject:@"installed"];
-        self.allowsMultipleSelection = NO;
+        self.allowsMultipleSelection = YES;
         self.delegate = self;
     }
 
