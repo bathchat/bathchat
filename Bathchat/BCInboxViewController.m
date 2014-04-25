@@ -37,6 +37,11 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.hidden = NO;
+
+    
+    [self performSegueWithIdentifier:@"OutOfBathSegue" sender:self];
+    
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation addUniqueObject:@"TestChannel" forKey:@"channels"];
@@ -48,6 +53,7 @@
     
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
+    // Adds background image
     UIImage *patternImage = [UIImage imageNamed:@"duckybg"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
     
@@ -163,7 +169,7 @@
     static NSString *CellIdentifier = @"InboxCell";
     BCInboxViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    PFObject* message = [_messages objectAtIndex:indexPath.row];
+    PFObject* message = [_messages objectAtIndex:([_messages count] - indexPath.row - 1)];
     PFObject* sender = message[@"sender"];
     
     cell.message = message;

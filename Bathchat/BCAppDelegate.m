@@ -44,12 +44,12 @@
     {
         NSLog(@"You need to authorize Location Services for the APP");
     }
+        
+//    _locationMgr = [[CLLocationManager alloc] init];
+//    _locationMgr.desiredAccuracy = kCLLocationAccuracyBest;
+//    _locationMgr.delegate = self;
     
-    _locationMgr = [[CLLocationManager alloc] init];
-    _locationMgr.desiredAccuracy = kCLLocationAccuracyBest;
-    _locationMgr.delegate = self;
-    
-    [_locationMgr startUpdatingLocation];
+    //[_locationMgr startUpdatingLocation];
     
     return YES;
 }
