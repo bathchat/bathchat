@@ -18,3 +18,26 @@ Parse.Cloud.afterSave("Message", function(request) {
     });
 
 });
+
+Parse.Cloud.afterSave("Bath", function(request) {
+
+    if (request.object.get("verified") == "rejected") {
+        var query = new Parse.Query(Parse.Installation);
+        query.equalTo('user', request.object.get("owner"));
+        
+        Parse.Push.send({
+            where: query, // Set our Installation query
+            data: {
+                alert: "Sorry! Your bath registration photo was rejected."
+            }
+        }, {
+            success: function() {
+                // Push was successful
+            },
+            error: function(error) {
+                // Handle error
+            }
+        });
+    }
+
+});

@@ -123,6 +123,7 @@
                NSLog(@"%@", uploadedFile);
                newBath[@"photo"] = uploadedFile;
                newBath[@"location"] = geoPoint;
+               newBath[@"owner"] = [PFUser currentUser];
                [newBath saveInBackground];
             }];
         }
