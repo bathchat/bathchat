@@ -6,14 +6,9 @@
 //  Copyright (c) 2014 Bathchat LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "Bathchat.h"
 
-#import "defines.h"
-#import "BCEditPhotoViewController.h"
-#import "BCInboxViewCell.h"
-
-@interface BCInboxViewController : UITableViewController <UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface BCInboxViewController : BCTableViewController <UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 - (IBAction)takePhoto:(id)sender;
 

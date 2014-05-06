@@ -6,13 +6,10 @@
 //  Copyright (c) 2014 Bathchat LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
-#import "defines.h"
+#import "Bathchat.h"
 
-@interface BCAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface BCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) CLLocationManager *locationMgr;
 
 @end

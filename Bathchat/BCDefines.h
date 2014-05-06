@@ -10,5 +10,6 @@
 #define Bathchat_defines_h
 
 #define BC_BLUE [UIColor colorWithRed:0.4375 green:0.6328 blue:0.8594 alpha:1.0]
+#define BC_TEN_METERS 0.00621371
 
 #endif

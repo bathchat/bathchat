@@ -27,27 +27,20 @@
 {
     [super viewDidLoad];
     
+    // Disable back button
+    self.navigationItem.hidesBackButton = YES;
+    
     // Start checking for bath location
     [self startTimer];
-
-    // Sets background image
-    UIImage *patternImage = [UIImage imageNamed:@"bgtile"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
     
+    // Hide the failure UI
+    _failureLabel.hidden = YES;
+    _registerButton.hidden = YES;
+    _searchingLabel.hidden = YES;
 }
 
 - (IBAction)registerBath:(id)sender {
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-#if TARGET_IPHONE_SIMULATOR
-    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-#else
-    imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePickerController.editing = NO;
-    imagePickerController.showsCameraControls = YES;
-#endif
-    
-    imagePickerController.delegate = (id)self;
-    [self presentModalViewController:imagePickerController animated:YES];
+    [self showCamera];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,41 +49,57 @@
     // Dispose of any resources that can be recreated.
 }
 
-//This will start a repeating timer that will fire every 5 seconds
+// This will start a repeating timer that will checkForBath
 -(IBAction)startTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0
                                                   target:self
                                                 selector:@selector(checkForBath:)
                                                 userInfo:nil
-                                                 repeats:YES];
+                                                 repeats:NO];
 }
 
 //The method the timer will call when fired
 -(void)checkForBath:(NSTimer *)aTimer {
-    //0.0000015696 radians
+    NSLog(@"Checking for bath");
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         if (!error) {
             PFQuery *query = [PFQuery queryWithClassName:@"Bath"];
-            // Interested in locations near user.
+            
+            // Interested only in verified baths near user
+            // withinMiles:BC_TEN_METERS
             [query whereKey:@"location" nearGeoPoint:geoPoint];
             [query whereKey:@"verified" equalTo:@"yes"];
-            // Limit what could be a lot of points.
+            
+            // Limit what probably won't be too many points anyway
             query.limit = 10;
-            // Final list of objects
+            
+            // Final list of baths
             NSArray *baths = [query findObjects];
             if ([baths count] > 0) {
-                [self stopTimer];
+                NSLog(@"Near a bath");
                 [self performSegueWithIdentifier:@"NearBathSegue" sender:self];
+                NSLog(@"Should hav errored?");
             }
+            else {
+                // Failed to find a nearby bath
+                // Switch to the failure case UI
+                [_searchActivityIndicator stopAnimating];
+                _searchingLabel.hidden = YES;
+                
+                _failureLabel.hidden = NO;
+                _registerButton.hidden = NO;
+                [self startTimer];
+            }
+        }
+        else {
+            [self startTimer];
         }
     }];
 }
 
-
 -(IBAction)stopTimer {
     [self.timer invalidate];
 }
-
 
 #pragma mark - Image picker delegate methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

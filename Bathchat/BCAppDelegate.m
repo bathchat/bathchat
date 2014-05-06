@@ -6,57 +6,49 @@
 //  Copyright (c) 2014 Bathchat LLC. All rights reserved.
 //
 
-#import <Parse/Parse.h>
 #import "BCAppDelegate.h"
 
 @implementation BCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Initialize Parse
     [Parse setApplicationId:@"Hzn5YPU1ylCzBW0QM6LTADxlS8Lj7sWz1iYEDnwF"
                   clientKey:@"snxApwFTqUFn4CyKwk1nyiMgbKfvKcTIoh9kjWC3"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
     
+    // Set global style options
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Lato-Regular" size:20], NSFontAttributeName, nil]];
     [[UINavigationBar appearance] setBarTintColor:BC_BLUE];
     [[UITabBar appearance] setSelectedImageTintColor:BC_BLUE];
-    
+        
+    // Register for APNS
     [application registerForRemoteNotificationTypes:
                  UIRemoteNotificationTypeBadge |
                  UIRemoteNotificationTypeAlert |
                  UIRemoteNotificationTypeSound];
     
-    
-    if(![CLLocationManager locationServicesEnabled])
-    {
+    // TODO: provide messages to the user for these edge cases
+    if(![CLLocationManager locationServicesEnabled]) {
         NSLog(@"You need to enable Location Services");
     }
-    if(![CLLocationManager isMonitoringAvailableForClass:[CLRegion class]])
-    {
+    if(![CLLocationManager isMonitoringAvailableForClass:[CLRegion class]]) {
         NSLog(@"Region monitoring is not available for this Class");
     }
     if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied ||
-       [CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted )
-    {
+       [CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted ) {
         NSLog(@"You need to authorize Location Services for the APP");
     }
-        
-//    _locationMgr = [[CLLocationManager alloc] init];
-//    _locationMgr.desiredAccuracy = kCLLocationAccuracyBest;
-//    _locationMgr.delegate = self;
-    
-    //[_locationMgr startUpdatingLocation];
     
     return YES;
 }
 
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
-    NSLog(@"DID REGISTER FOR APNS");
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
@@ -108,21 +100,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-#pragma mark -
-#pragma mark CLLocationManagerDelegate
-
--(void)locationManager:(CLLocationManager *)manager
-   didUpdateToLocation:(CLLocation *)newLocation
-          fromLocation:(CLLocation *)oldLocation
-{
-	NSLog(@"location updated %@", newLocation);
-}
-
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-	NSLog(@"location errored");
 }
 
 @end

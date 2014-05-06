@@ -27,44 +27,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
-    PFUser* cu = [PFUser currentUser];
-    NSLog(@"%@", cu[@"authData"]);
-    NSLog(@"%@", cu[@"objectId"]);
+    
+    // If the user is already logged in, continue
     if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        [self performSegueWithIdentifier:@"LoginSegue" sender:self];
+        [self loginSuccess];
     }
 }
 
-- (IBAction)loginButtonTouchHandler:(id)sender  {
+- (IBAction)loginButtonTouchHandler:(id)sender
+{
     // The permissions requested from the user
     NSArray *permissionsArray = @[@"email"];
+
+    // Begin the activity indicator and hide the button
     [_activityIndicator startAnimating];
+    _loginButton.hidden = YES;
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         [_activityIndicator stopAnimating]; // Hide loading indicator
         
         if (!user) {
+            // The user failed to log in for some reason. We need to put the button back.
+            _loginButton.hidden = NO;
+            
             if (!error) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
+                NSLog(@"The user cancelled the Facebook login.");
             } else {
                 NSLog(@"Uh oh. An error occurred: %@", error);
             }
-        } else if (user.isNew) {
-            NSLog(@"User with facebook signed up and logged in!");
-            [FBRequestConnection
-             startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                 if (!error) {
-                     user[@"facebookId"] = [result objectForKey:@"id"];
-                     user[@"first_name"] = [result objectForKey:@"first_name"];
-                     user[@"last_name"] = [result objectForKey:@"last_name"];
-                     [user saveInBackground];
-                 }
-             }];
-            [self performSegueWithIdentifier:@"LoginSegue" sender:self];
         } else {
-            NSLog(@"User with facebook logged in!");
+            // Update the PFUser with info retrieved from FB
             [FBRequestConnection
              startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                  if (!error) {
@@ -74,9 +67,16 @@
                      [user saveInBackground];
                  }
              }];
-            [self performSegueWithIdentifier:@"LoginSegue" sender:self];
+            
+            // Success
+            [self loginSuccess];
         }
     }];
+}
+
+- (void)loginSuccess
+{
+    [self performSegueWithIdentifier:@"LoginSegue" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Bathchat LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "Bathchat.h"
 
-@interface BCLoginViewController : UIViewController
+@interface BCLoginViewController : BCViewController
 
-@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 - (IBAction)loginButtonTouchHandler:(id)sender;
 

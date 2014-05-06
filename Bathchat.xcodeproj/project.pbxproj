@@ -9,16 +9,32 @@
 /* Begin PBXBuildFile section */
 		650C836A18EA1978008F94CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650C836918EA1978008F94CC /* Parse.framework */; };
 		651182ED1909AAF60073269D /* BCOutOfBathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651182EC1909AAF60073269D /* BCOutOfBathViewController.m */; };
-		651182EF1909AC4B0073269D /* page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651182EE1909AC4B0073269D /* page@2x.png */; };
 		651182F31909AEE10073269D /* bgtile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651182F21909AEE10073269D /* bgtile@2x.png */; };
+		651182F9190B65F10073269D /* silver-button-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651182F8190B65F10073269D /* silver-button-normal@2x.png */; };
+		651182FC190B68180073269D /* BCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651182FB190B68180073269D /* BCViewController.m */; };
 		65299BFE18ED317200ECB5F3 /* BCInboxViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65299BFD18ED317200ECB5F3 /* BCInboxViewCell.m */; };
-		65299C0518ED3F4000ECB5F3 /* duckybg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C0418ED3F4000ECB5F3 /* duckybg@2x.png */; };
 		65299C0B18ED8E0F00ECB5F3 /* BCEditImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65299C0A18ED8E0F00ECB5F3 /* BCEditImageView.m */; };
 		65299C0D18ED923800ECB5F3 /* ducky@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C0C18ED923800ECB5F3 /* ducky@2x.png */; };
 		65299C1718EE153D00ECB5F3 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C1418EE153D00ECB5F3 /* gear@2x.png */; };
 		65299C1818EE153D00ECB5F3 /* bath@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C1518EE153D00ECB5F3 /* bath@2x.png */; };
 		65299C1918EE153D00ECB5F3 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65299C1618EE153D00ECB5F3 /* inbox@2x.png */; };
 		6545A09C1905DA8800DEFE4D /* BCViewImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545A09B1905DA8800DEFE4D /* BCViewImageViewController.m */; };
+		656E6DD21910BAC900D91526 /* f-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 656E6DD11910BAC900D91526 /* f-login@2x.png */; };
+		658182AA190B6C7E004308AF /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658182A9190B6C7E004308AF /* login-button-small@2x.png */; };
+		658182AC190B6D60004308AF /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658182AB190B6D60004308AF /* login-button-small-pressed@2x.png */; };
+		658182BA190B6E53004308AF /* Lato-Bla.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182AF190B6E53004308AF /* Lato-Bla.ttf */; };
+		658182BB190B6E53004308AF /* Lato-BlaIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B0190B6E53004308AF /* Lato-BlaIta.ttf */; };
+		658182BC190B6E53004308AF /* Lato-Bol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B1190B6E53004308AF /* Lato-Bol.ttf */; };
+		658182BD190B6E53004308AF /* Lato-BolIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B2190B6E53004308AF /* Lato-BolIta.ttf */; };
+		658182BE190B6E53004308AF /* Lato-Hai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B3190B6E53004308AF /* Lato-Hai.ttf */; };
+		658182BF190B6E53004308AF /* Lato-HaiIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B4190B6E53004308AF /* Lato-HaiIta.ttf */; };
+		658182C0190B6E53004308AF /* Lato-Lig.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B5190B6E53004308AF /* Lato-Lig.ttf */; };
+		658182C1190B6E53004308AF /* Lato-LigIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B6190B6E53004308AF /* Lato-LigIta.ttf */; };
+		658182C2190B6E53004308AF /* Lato-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B7190B6E53004308AF /* Lato-Reg.ttf */; };
+		658182C3190B6E53004308AF /* Lato-RegIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658182B8190B6E53004308AF /* Lato-RegIta.ttf */; };
+		658182C4190B6E53004308AF /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 658182B9190B6E53004308AF /* SIL Open Font License.txt */; };
+		658182C8190B813B004308AF /* BCBathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658182C7190B813B004308AF /* BCBathsViewController.m */; };
+		658182CB190B8244004308AF /* BCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658182CA190B8244004308AF /* BCTableViewController.m */; };
 		658E804E18E8C6B300DDB0AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E804D18E8C6B300DDB0AB /* Foundation.framework */; };
 		658E805018E8C6B300DDB0AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */; };
 		658E805218E8C6B300DDB0AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E805118E8C6B300DDB0AB /* UIKit.framework */; };
@@ -43,9 +59,6 @@
 		658E809118E8CB6C00DDB0AB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E808818E8CB6C00DDB0AB /* SystemConfiguration.framework */; };
 		658E809418E8CC9E00DDB0AB /* BCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E809318E8CC9E00DDB0AB /* BCLoginViewController.m */; };
 		658E829318E8EB7400DDB0AB /* BCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829218E8EB7400DDB0AB /* BCInboxViewController.m */; };
-		658E829618E8EBA300DDB0AB /* BCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829518E8EBA300DDB0AB /* BCUser.m */; };
-		658E829918E8EBCC00DDB0AB /* BCBath.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829818E8EBCC00DDB0AB /* BCBath.m */; };
-		658E829C18E8EDE100DDB0AB /* BCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E829B18E8EDE100DDB0AB /* BCMessage.m */; };
 		658E829E18E8F1D700DDB0AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */; };
 		65CBFD4918EA5BB90083AAAF /* BCEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CBFD4818EA5BB90083AAAF /* BCEditPhotoViewController.m */; };
 		65F81F1218EA8B2E0044BD63 /* BCSendPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F81F1118EA8B2E0044BD63 /* BCSendPhotoViewController.m */; };
@@ -65,12 +78,14 @@
 		650C836918EA1978008F94CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		651182EB1909AAF60073269D /* BCOutOfBathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOutOfBathViewController.h; sourceTree = "<group>"; };
 		651182EC1909AAF60073269D /* BCOutOfBathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCOutOfBathViewController.m; sourceTree = "<group>"; };
-		651182EE1909AC4B0073269D /* page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page@2x.png"; sourceTree = "<group>"; };
 		651182F21909AEE10073269D /* bgtile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgtile@2x.png"; sourceTree = "<group>"; };
+		651182F8190B65F10073269D /* silver-button-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "silver-button-normal@2x.png"; sourceTree = "<group>"; };
+		651182FA190B68180073269D /* BCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCViewController.h; sourceTree = "<group>"; };
+		651182FB190B68180073269D /* BCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCViewController.m; sourceTree = "<group>"; };
+		651182FD190B68CF0073269D /* Bathchat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bathchat.h; sourceTree = "<group>"; };
 		65299BFC18ED317200ECB5F3 /* BCInboxViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCInboxViewCell.h; sourceTree = "<group>"; };
 		65299BFD18ED317200ECB5F3 /* BCInboxViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCInboxViewCell.m; sourceTree = "<group>"; };
-		65299C0018ED39E200ECB5F3 /* defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
-		65299C0418ED3F4000ECB5F3 /* duckybg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "duckybg@2x.png"; sourceTree = "<group>"; };
+		65299C0018ED39E200ECB5F3 /* BCDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCDefines.h; sourceTree = "<group>"; };
 		65299C0918ED8E0F00ECB5F3 /* BCEditImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCEditImageView.h; sourceTree = "<group>"; };
 		65299C0A18ED8E0F00ECB5F3 /* BCEditImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCEditImageView.m; sourceTree = "<group>"; };
 		65299C0C18ED923800ECB5F3 /* ducky@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ducky@2x.png"; sourceTree = "<group>"; };
@@ -79,6 +94,24 @@
 		65299C1618EE153D00ECB5F3 /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		6545A09A1905DA8800DEFE4D /* BCViewImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCViewImageViewController.h; sourceTree = "<group>"; };
 		6545A09B1905DA8800DEFE4D /* BCViewImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCViewImageViewController.m; sourceTree = "<group>"; };
+		656E6DD11910BAC900D91526 /* f-login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f-login@2x.png"; sourceTree = "<group>"; };
+		658182A9190B6C7E004308AF /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
+		658182AB190B6D60004308AF /* login-button-small-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed@2x.png"; sourceTree = "<group>"; };
+		658182AF190B6E53004308AF /* Lato-Bla.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bla.ttf"; sourceTree = "<group>"; };
+		658182B0190B6E53004308AF /* Lato-BlaIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlaIta.ttf"; sourceTree = "<group>"; };
+		658182B1190B6E53004308AF /* Lato-Bol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bol.ttf"; sourceTree = "<group>"; };
+		658182B2190B6E53004308AF /* Lato-BolIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BolIta.ttf"; sourceTree = "<group>"; };
+		658182B3190B6E53004308AF /* Lato-Hai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hai.ttf"; sourceTree = "<group>"; };
+		658182B4190B6E53004308AF /* Lato-HaiIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HaiIta.ttf"; sourceTree = "<group>"; };
+		658182B5190B6E53004308AF /* Lato-Lig.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Lig.ttf"; sourceTree = "<group>"; };
+		658182B6190B6E53004308AF /* Lato-LigIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LigIta.ttf"; sourceTree = "<group>"; };
+		658182B7190B6E53004308AF /* Lato-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Reg.ttf"; sourceTree = "<group>"; };
+		658182B8190B6E53004308AF /* Lato-RegIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-RegIta.ttf"; sourceTree = "<group>"; };
+		658182B9190B6E53004308AF /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		658182C6190B813B004308AF /* BCBathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBathsViewController.h; sourceTree = "<group>"; };
+		658182C7190B813B004308AF /* BCBathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBathsViewController.m; sourceTree = "<group>"; };
+		658182C9190B8244004308AF /* BCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableViewController.h; sourceTree = "<group>"; };
+		658182CA190B8244004308AF /* BCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTableViewController.m; sourceTree = "<group>"; };
 		658E804A18E8C6B300DDB0AB /* Bathchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bathchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658E804D18E8C6B300DDB0AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,12 +142,6 @@
 		658E809318E8CC9E00DDB0AB /* BCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCLoginViewController.m; sourceTree = "<group>"; };
 		658E829118E8EB7400DDB0AB /* BCInboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCInboxViewController.h; sourceTree = "<group>"; };
 		658E829218E8EB7400DDB0AB /* BCInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCInboxViewController.m; sourceTree = "<group>"; };
-		658E829418E8EBA300DDB0AB /* BCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCUser.h; sourceTree = "<group>"; };
-		658E829518E8EBA300DDB0AB /* BCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCUser.m; sourceTree = "<group>"; };
-		658E829718E8EBCC00DDB0AB /* BCBath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBath.h; sourceTree = "<group>"; };
-		658E829818E8EBCC00DDB0AB /* BCBath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBath.m; sourceTree = "<group>"; };
-		658E829A18E8EDE100DDB0AB /* BCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMessage.h; sourceTree = "<group>"; };
-		658E829B18E8EDE100DDB0AB /* BCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessage.m; sourceTree = "<group>"; };
 		658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		65CBFD4718EA5BB90083AAAF /* BCEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCEditPhotoViewController.h; sourceTree = "<group>"; };
 		65CBFD4818EA5BB90083AAAF /* BCEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCEditPhotoViewController.m; sourceTree = "<group>"; };
@@ -168,18 +195,47 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		65299C0118ED3E5D00ECB5F3 /* images */ = {
+		65299C0118ED3E5D00ECB5F3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				656E6DD11910BAC900D91526 /* f-login@2x.png */,
+				651182F8190B65F10073269D /* silver-button-normal@2x.png */,
+				658182AB190B6D60004308AF /* login-button-small-pressed@2x.png */,
+				658182A9190B6C7E004308AF /* login-button-small@2x.png */,
 				651182F21909AEE10073269D /* bgtile@2x.png */,
-				651182EE1909AC4B0073269D /* page@2x.png */,
 				65299C1418EE153D00ECB5F3 /* gear@2x.png */,
 				65299C1518EE153D00ECB5F3 /* bath@2x.png */,
 				65299C1618EE153D00ECB5F3 /* inbox@2x.png */,
 				65299C0C18ED923800ECB5F3 /* ducky@2x.png */,
-				65299C0418ED3F4000ECB5F3 /* duckybg@2x.png */,
 			);
-			name = images;
+			name = Images;
+			sourceTree = "<group>";
+		};
+		658182AD190B6E3D004308AF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				658182AE190B6E53004308AF /* Lato */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		658182AE190B6E53004308AF /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				658182AF190B6E53004308AF /* Lato-Bla.ttf */,
+				658182B0190B6E53004308AF /* Lato-BlaIta.ttf */,
+				658182B1190B6E53004308AF /* Lato-Bol.ttf */,
+				658182B2190B6E53004308AF /* Lato-BolIta.ttf */,
+				658182B3190B6E53004308AF /* Lato-Hai.ttf */,
+				658182B4190B6E53004308AF /* Lato-HaiIta.ttf */,
+				658182B5190B6E53004308AF /* Lato-Lig.ttf */,
+				658182B6190B6E53004308AF /* Lato-LigIta.ttf */,
+				658182B7190B6E53004308AF /* Lato-Reg.ttf */,
+				658182B8190B6E53004308AF /* Lato-RegIta.ttf */,
+				658182B9190B6E53004308AF /* SIL Open Font License.txt */,
+			);
+			name = Lato;
+			path = lato;
 			sourceTree = "<group>";
 		};
 		658E804118E8C6B300DDB0AB = {
@@ -204,11 +260,11 @@
 		658E804C18E8C6B300DDB0AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */,
 				658E808018E8CB6C00DDB0AB /* AudioToolbox.framework */,
 				658E808118E8CB6C00DDB0AB /* CFNetwork.framework */,
 				658E804F18E8C6B300DDB0AB /* CoreGraphics.framework */,
 				658E808218E8CB6C00DDB0AB /* CoreLocation.framework */,
+				658E829D18E8F1D700DDB0AB /* FacebookSDK.framework */,
 				658E804D18E8C6B300DDB0AB /* Foundation.framework */,
 				658E808318E8CB6C00DDB0AB /* libz.dylib */,
 				658E808418E8CB6C00DDB0AB /* MobileCoreServices.framework */,
@@ -226,7 +282,8 @@
 		658E805318E8C6B300DDB0AB /* Bathchat */ = {
 			isa = PBXGroup;
 			children = (
-				65299C0018ED39E200ECB5F3 /* defines.h */,
+				651182FD190B68CF0073269D /* Bathchat.h */,
+				65299C0018ED39E200ECB5F3 /* BCDefines.h */,
 				658E809518E8CCA300DDB0AB /* Classes */,
 				658E809918E8CCDD00DDB0AB /* Resources */,
 				658E805418E8C6B300DDB0AB /* Supporting Files */,
@@ -268,34 +325,26 @@
 			children = (
 				658E809818E8CCC100DDB0AB /* App Delegate */,
 				658E809718E8CCB600DDB0AB /* Controllers */,
-				658E809618E8CCAE00DDB0AB /* Models */,
 				65299BFF18ED317700ECB5F3 /* Views */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		658E809618E8CCAE00DDB0AB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				658E829718E8EBCC00DDB0AB /* BCBath.h */,
-				658E829818E8EBCC00DDB0AB /* BCBath.m */,
-				658E829A18E8EDE100DDB0AB /* BCMessage.h */,
-				658E829B18E8EDE100DDB0AB /* BCMessage.m */,
-				658E829418E8EBA300DDB0AB /* BCUser.h */,
-				658E829518E8EBA300DDB0AB /* BCUser.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		658E809718E8CCB600DDB0AB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				651182FA190B68180073269D /* BCViewController.h */,
+				651182FB190B68180073269D /* BCViewController.m */,
+				658182C9190B8244004308AF /* BCTableViewController.h */,
+				658182CA190B8244004308AF /* BCTableViewController.m */,
 				658E809218E8CC9E00DDB0AB /* BCLoginViewController.h */,
 				658E809318E8CC9E00DDB0AB /* BCLoginViewController.m */,
-				658E829118E8EB7400DDB0AB /* BCInboxViewController.h */,
-				658E829218E8EB7400DDB0AB /* BCInboxViewController.m */,
 				651182EB1909AAF60073269D /* BCOutOfBathViewController.h */,
 				651182EC1909AAF60073269D /* BCOutOfBathViewController.m */,
+				658182C6190B813B004308AF /* BCBathsViewController.h */,
+				658182C7190B813B004308AF /* BCBathsViewController.m */,
+				658E829118E8EB7400DDB0AB /* BCInboxViewController.h */,
+				658E829218E8EB7400DDB0AB /* BCInboxViewController.m */,
 				6545A09A1905DA8800DEFE4D /* BCViewImageViewController.h */,
 				6545A09B1905DA8800DEFE4D /* BCViewImageViewController.m */,
 				65CBFD4718EA5BB90083AAAF /* BCEditPhotoViewController.h */,
@@ -318,9 +367,10 @@
 		658E809918E8CCDD00DDB0AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				658182AD190B6E3D004308AF /* Fonts */,
 				658E807C18E8C6F200DDB0AB /* Main.storyboard */,
 				658E805F18E8C6B300DDB0AB /* Images.xcassets */,
-				65299C0118ED3E5D00ECB5F3 /* images */,
+				65299C0118ED3E5D00ECB5F3 /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -405,16 +455,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658182C3190B6E53004308AF /* Lato-RegIta.ttf in Resources */,
+				658182C4190B6E53004308AF /* SIL Open Font License.txt in Resources */,
 				65299C0D18ED923800ECB5F3 /* ducky@2x.png in Resources */,
+				658182BD190B6E53004308AF /* Lato-BolIta.ttf in Resources */,
+				658182AC190B6D60004308AF /* login-button-small-pressed@2x.png in Resources */,
 				65299C1918EE153D00ECB5F3 /* inbox@2x.png in Resources */,
-				651182EF1909AC4B0073269D /* page@2x.png in Resources */,
+				651182F9190B65F10073269D /* silver-button-normal@2x.png in Resources */,
 				65299C1718EE153D00ECB5F3 /* gear@2x.png in Resources */,
-				65299C0518ED3F4000ECB5F3 /* duckybg@2x.png in Resources */,
+				658182AA190B6C7E004308AF /* login-button-small@2x.png in Resources */,
+				658182C1190B6E53004308AF /* Lato-LigIta.ttf in Resources */,
+				658182BE190B6E53004308AF /* Lato-Hai.ttf in Resources */,
 				658E807D18E8C6F200DDB0AB /* Main.storyboard in Resources */,
 				658E805818E8C6B300DDB0AB /* InfoPlist.strings in Resources */,
+				658182BA190B6E53004308AF /* Lato-Bla.ttf in Resources */,
+				658182C0190B6E53004308AF /* Lato-Lig.ttf in Resources */,
 				651182F31909AEE10073269D /* bgtile@2x.png in Resources */,
+				658182BB190B6E53004308AF /* Lato-BlaIta.ttf in Resources */,
+				658182BF190B6E53004308AF /* Lato-HaiIta.ttf in Resources */,
 				65299C1818EE153D00ECB5F3 /* bath@2x.png in Resources */,
+				658182BC190B6E53004308AF /* Lato-Bol.ttf in Resources */,
 				658E806018E8C6B300DDB0AB /* Images.xcassets in Resources */,
+				658182C2190B6E53004308AF /* Lato-Reg.ttf in Resources */,
+				656E6DD21910BAC900D91526 /* f-login@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,16 +499,16 @@
 				65299BFE18ED317200ECB5F3 /* BCInboxViewCell.m in Sources */,
 				658E805A18E8C6B300DDB0AB /* main.m in Sources */,
 				658E805E18E8C6B300DDB0AB /* BCAppDelegate.m in Sources */,
+				651182FC190B68180073269D /* BCViewController.m in Sources */,
 				651182ED1909AAF60073269D /* BCOutOfBathViewController.m in Sources */,
 				65CBFD4918EA5BB90083AAAF /* BCEditPhotoViewController.m in Sources */,
 				6545A09C1905DA8800DEFE4D /* BCViewImageViewController.m in Sources */,
 				658E829318E8EB7400DDB0AB /* BCInboxViewController.m in Sources */,
+				658182CB190B8244004308AF /* BCTableViewController.m in Sources */,
+				658182C8190B813B004308AF /* BCBathsViewController.m in Sources */,
 				65299C0B18ED8E0F00ECB5F3 /* BCEditImageView.m in Sources */,
 				658E809418E8CC9E00DDB0AB /* BCLoginViewController.m in Sources */,
-				658E829C18E8EDE100DDB0AB /* BCMessage.m in Sources */,
-				658E829618E8EBA300DDB0AB /* BCUser.m in Sources */,
 				65F81F1218EA8B2E0044BD63 /* BCSendPhotoViewController.m in Sources */,
-				658E829918E8EBCC00DDB0AB /* BCBath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
