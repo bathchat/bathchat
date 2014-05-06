@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Bathchat": {
+            "applicationId": "Hzn5YPU1ylCzBW0QM6LTADxlS8Lj7sWz1iYEDnwF", 
+            "masterKey": "NRoPXaamEG8gA20QVMoAJkhu1A6O1KXMxFdjcdMN"
+        }, 
+        "_default": {
+            "link": "Bathchat"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}

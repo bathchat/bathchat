@@ -76,6 +76,11 @@
 
 - (void)loginSuccess
 {
+    // Update installation object with user info
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    currentInstallation[@"user"] = [PFUser currentUser];
+    [currentInstallation saveInBackground];
+    
     [self performSegueWithIdentifier:@"LoginSegue" sender:self];
 }
 
